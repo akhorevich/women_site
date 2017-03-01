@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var stylus = require('gulp-stylus');
-var pug = require('gulp-pug');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
+var jade = require('gulp-jade');
 
 gulp.task('stylus', function () {
   return gulp.src('./build/style.styl')
@@ -10,8 +8,10 @@ gulp.task('stylus', function () {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('pug', function buildHTML() {
-  return gulp.src('build/templates/*.pug')
-  .pipe(pug())
+gulp.task('jade', function buildHTML() {
+  return gulp.src('build/templates/*.jade')
+  .pipe(jade())
   .pipe(gulp.dest('./dist/'));
 });
+
+gulp.task('default', ['jade', 'stylus']);
