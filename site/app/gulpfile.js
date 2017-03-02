@@ -1,7 +1,7 @@
 var gulp = require('gulp');
+var imagemin = require('gulp-imagemin');
 var stylus = require('gulp-stylus');
 var jade = require('gulp-jade');
-var imagemin = require('gulp-imagemin');
 
 gulp.task('stylus', function () {
   return gulp.src('./build/style.styl')
